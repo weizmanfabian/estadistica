@@ -19,3 +19,6 @@ python manage.py makemigrations
 
 crear la base de datos de acuerdo al modelo
 python manage.py migrate
+
+https://www.youtube.com/watch?v=ezIj71CX944
+01:00

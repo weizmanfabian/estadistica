@@ -1,5 +1,8 @@
+from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Libro
+from .forms import LibroForm
 
 # Create your views here.
 
@@ -14,11 +17,15 @@ def nosotros(req):
 
 
 def libros(req):
-    return render(req, 'libros/index.html')
+    libros = Libro.objects.all()
+    print('get All libros', len(libros))
+    return render(req, 'libros/index.html', {'libros': libros})
 
 
 def crearLibro(req):
-    return render(req, 'libros/crear.html')
+    formulario = LibroForm(req.POST or None)
+    # print(formulario)
+    return render(req, 'libros/crear.html', {'formulario', formulario})
 
 
 def editarLibro(req):
