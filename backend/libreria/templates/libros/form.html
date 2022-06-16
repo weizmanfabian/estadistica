@@ -1,7 +1,12 @@
 <form enctype="multipart/form-data" method="post">
+  {% csrf_token %}
+  {% for campo in formulario %}
   <div class="mb-3">
     <label for="" class="form-label">Nombre</label>
     <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Nombre">
     <small id="helpId" class="form-text text-muted">Help text</small>
   </div>
+  {% endfor %}
 </form>
+
+https://www.bing.com/videos/search?q=django-importcsv&&view=detail&mid=43F4BB864C867A5CD4E543F4BB864C867A5CD4E5&&FORM=VRDGAR&ru=%2Fvideos%2Fsearch%3Fq%3Ddjango-importcsv%26FORM%3DHDRSC3
